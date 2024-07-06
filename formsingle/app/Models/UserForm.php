@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserForm extends Model
 {
+
+    protected $table = 'usersform';
     protected $fillable = [
         'fullName',
         'company',
@@ -20,5 +22,6 @@ class UserForm extends Model
 
     protected $casts = [
         'interestProduct' => 'array', // Cast 'interestProduct' attribute to array
+        'newsProduct' => 'boolean',
     ];
 }

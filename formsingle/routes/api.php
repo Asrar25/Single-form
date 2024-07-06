@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/storedata',[UserFormController::class,'store']);
+Route::post('/storedata', [UserFormController::class, 'store']);
 
-Route::get('/store',[UserFormController::class,'sample']);
+Route::get('/store', [UserFormController::class, 'sample']);

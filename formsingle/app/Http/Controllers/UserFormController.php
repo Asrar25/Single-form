@@ -13,9 +13,12 @@ class UserFormController extends Controller
         $validator = Validator::make($request->all(), [
             'fullName' => 'required|min:3|regex:/^[a-zA-Z\s]+$/',
             'company' => 'required|regex:/^[a-zA-Z\s]+$/',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:usersform,email',
             'phoneNumber' => 'required|digits:10',
             'hear' => 'required',
+        ], [
+            'email.email' => 'Invalid Email',
+            'email.unique' => 'Email already exit!!'
         ]);
 
         if ($validator->fails()) {
